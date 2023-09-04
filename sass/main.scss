@@ -1,0 +1,178 @@
+@use './color' as color;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Inter', 'Lexend Deca', sans-serif;
+	background-color: color.$main_background;
+}
+
+.card {
+	display: flex;
+	flex-direction: column-reverse;
+	background-color: color.$card_background;
+	border-radius: 1rem;
+	overflow: hidden;
+	margin: 3rem 2.5rem;
+
+	&__text {
+		padding: 2.5rem 3.5rem 0 3.5rem;
+		text-align: center;
+
+		&-heading {
+			font-size: 2.6rem;
+			font-weight: bold;
+			color: color.$white;
+		}
+
+		&-accent {
+			color: color.$accent;
+		}
+
+		&-info {
+			padding-top: 1rem;
+			font-size: 1.5rem;
+			color: color.$stat_headings;
+			line-height: 2.5rem;
+		}
+		&-footnote {
+			padding-top: 3rem;
+
+			&-one,
+			&-two,
+			&-three {
+				&--head {
+					color: color.$white;
+					font-size: 2.2rem;
+					font-weight: bold;
+				}
+
+				&--lower {
+					padding: 0.5rem 0 3rem 0;
+					color: color.$stat_headings;
+					font-size: 1.1rem;
+					text-transform: uppercase;
+					letter-spacing: 0.1rem;
+				}
+			}
+		}
+	}
+
+	&__img {
+		background: color.$accent2;
+
+		&-mobile {
+			width: 100%;
+			vertical-align: middle;
+			opacity: 0.4;
+		}
+		&-desktop {
+			display: none;
+		}
+	}
+}
+@media (min-width: 810px) and (max-width: 992px) {
+	.card {
+		margin: 6rem 5rem;
+
+		&__text {
+			padding: 5rem 7rem 0 7rem;
+
+			&-heading {
+				font-size: 4rem;
+			}
+
+			&-info {
+				padding-top: 3rem;
+				font-size: 3rem;
+				line-height: 4rem;
+			}
+
+			&-footnote {
+				padding-top: 6rem;
+				&-one,
+				&-two,
+				&-three {
+					&--head {
+						font-size: 3.6rem;
+					}
+
+					&--lower {
+						padding: 1rem 0 6rem 0;
+						font-size: 1.8rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.card {
+		flex-direction: row;
+		width: 111rem;
+		height: 45rem;
+
+		&__text {
+			padding: 7rem 4rem 7rem 7rem;
+			text-align: left;
+
+			&-heading {
+				font-size: 3.5rem;
+				letter-spacing: 0.6px;
+				line-height: 4.5rem;
+			}
+
+			&-info {
+				padding: 2.2rem 7rem 0 0;
+				font-size: 1.5rem;
+				line-height: 2.5rem;
+			}
+
+			&-footnote {
+				display: flex;
+				padding: 7.5rem 11rem 0 0;
+				justify-content: space-between;
+				&-one,
+				&-two,
+				&-three {
+					&--head {
+						font-size: 2.2rem;
+						letter-spacing: 0.1rem;
+					}
+
+					&--lower {
+						padding-top: 1rem;
+						font-size: 1.1rem;
+						letter-spacing: 0.2rem;
+					}
+				}
+			}
+		}
+
+		&__img {
+			width: 48.5%;
+			&-mobile {
+				display: none;
+			}
+
+			&-desktop {
+				display: block;
+				height: 100%;
+				opacity: 0.4;
+			}
+		}
+	}
+}
