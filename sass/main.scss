@@ -19,160 +19,156 @@ body {
 	background-color: color.$main_background;
 }
 
-.card {
+.card-wrapper {
 	display: flex;
+	max-width: 100vw;
 	flex-direction: column-reverse;
+	margin: 3rem 2.5rem;
 	background-color: color.$card_background;
 	border-radius: 1rem;
+	text-align: center;
 	overflow: hidden;
-	margin: 3rem 2.5rem;
+}
 
-	&__text {
-		padding: 2.5rem 3.5rem 0 3.5rem;
-		text-align: center;
+.text-wrapper {
+	padding: 2.5rem 3.5rem 0 3.5rem;
 
-		&-heading {
-			font-size: 2.6rem;
-			font-weight: bold;
-			color: color.$white;
-		}
-
-		&-accent {
+	&__heading {
+		font-size: 2.6rem;
+		font-weight: bold;
+		color: color.$white;
+		&--accent {
 			color: color.$accent;
-		}
-
-		&-info {
-			padding-top: 1rem;
-			font-size: 1.5rem;
-			color: color.$stat_headings;
-			line-height: 2.5rem;
-		}
-		&-footnote {
-			padding-top: 3rem;
-
-			&-one,
-			&-two,
-			&-three {
-				&--head {
-					color: color.$white;
-					font-size: 2.2rem;
-					font-weight: bold;
-				}
-
-				&--lower {
-					padding: 0.5rem 0 3rem 0;
-					color: color.$stat_headings;
-					font-size: 1.1rem;
-					text-transform: uppercase;
-					letter-spacing: 0.1rem;
-				}
-			}
 		}
 	}
 
-	&__img {
-		background: color.$accent2;
+	&__info {
+		padding-top: 1rem;
+		font-size: 1.5rem;
+		color: color.$stat_headings;
+		line-height: 2.5rem;
+	}
+}
+.footnote-wrapper {
+	padding-top: 3rem;
 
-		&-mobile {
-			width: 100%;
-			vertical-align: middle;
-			opacity: 0.4;
+	&__one {
+		&--head {
+			color: color.$white;
+			font-size: 2.2rem;
+			font-weight: bold;
 		}
-		&-desktop {
-			display: none;
+
+		&--lower {
+			padding: 0.5rem 0 3rem 0;
+			color: color.$stat_headings;
+			font-size: 1.1rem;
+			text-transform: uppercase;
+			letter-spacing: 0.1rem;
 		}
 	}
 }
+
+.img-wrapper {
+	background: color.$accent2;
+
+	&__mobile {
+		width: 100%;
+		vertical-align: middle;
+		opacity: 0.4;
+	}
+	&__desktop {
+		display: none;
+	}
+}
+
 @media (min-width: 768px) and (max-width: 992px) {
-	.card {
+	.card-wrapper {
 		margin: 6rem 5rem;
+	}
+	.text-wrapper {
+		padding: 5rem 7rem 0 7rem;
 
-		&__text {
-			padding: 5rem 7rem 0 7rem;
+		&__heading {
+			font-size: 4rem;
+		}
 
-			&-heading {
-				font-size: 4rem;
+		&__info {
+			padding-top: 3rem;
+			font-size: 3rem;
+			line-height: 4rem;
+		}
+	}
+
+	.footnote-wrapper {
+		display: flex;
+		justify-content: space-between;
+		padding: 0 10rem 0 10rem;
+		padding-top: 6rem;
+		&__one {
+			&--head {
+				font-size: 3.6rem;
 			}
 
-			&-info {
-				padding-top: 3rem;
-				font-size: 3rem;
-				line-height: 4rem;
-			}
-
-			&-footnote {
-				padding-top: 6rem;
-				&-one,
-				&-two,
-				&-three {
-					&--head {
-						font-size: 3.6rem;
-					}
-
-					&--lower {
-						padding: 1rem 0 6rem 0;
-						font-size: 1.8rem;
-					}
-				}
+			&--lower {
+				padding: 1rem 0 6rem 0;
+				font-size: 1.8rem;
 			}
 		}
 	}
 }
 
 @media (min-width: 992px) {
-	.card {
+	.card-wrapper {
 		flex-direction: row;
 		width: 111rem;
 		height: 45rem;
+	}
+	.text-wrapper {
+		padding: 7rem 4rem 7rem 7rem;
+		text-align: left;
 
-		&__text {
-			padding: 7rem 4rem 7rem 7rem;
-			text-align: left;
-
-			&-heading {
-				font-size: 3.5rem;
-				letter-spacing: 0.6px;
-				line-height: 4.5rem;
-			}
-
-			&-info {
-				padding: 2.2rem 7rem 0 0;
-				font-size: 1.5rem;
-				line-height: 2.5rem;
-			}
-
-			&-footnote {
-				display: flex;
-				padding: 7.5rem 11rem 0 0;
-				justify-content: space-between;
-				&-one,
-				&-two,
-				&-three {
-					&--head {
-						font-size: 2.2rem;
-						letter-spacing: 0.1rem;
-					}
-
-					&--lower {
-						padding-top: 1rem;
-						font-size: 1.1rem;
-						letter-spacing: 0.2rem;
-					}
-				}
-			}
+		&__heading {
+			font-size: 3.5rem;
+			letter-spacing: 0.6px;
+			line-height: 4.5rem;
 		}
 
-		&__img {
-			width: 48.5%;
-			&-mobile {
-				display: none;
+		&__info {
+			padding: 2.2rem 7rem 0 0;
+			font-size: 1.5rem;
+			line-height: 2.5rem;
+		}
+	}
+
+	.footnote-wrapper {
+		display: flex;
+		padding: 0rem 13rem 0rem 7rem;
+		justify-content: space-between;
+		&__one {
+			&--head {
+				font-size: 2.2rem;
+				letter-spacing: 0.1rem;
 			}
 
-			&-desktop {
-				display: block;
-				height: 100%;
-				opacity: 0.4;
+			&--lower {
+				padding-top: 1rem;
+				font-size: 1.1rem;
+				letter-spacing: 0.2rem;
 			}
+		}
+	}
+
+	.img-wrapper {
+		width: 48.5%;
+		&__mobile {
+			display: none;
+		}
+
+		&__desktop {
+			display: block;
+			height: 100%;
+			opacity: 0.4;
 		}
 	}
 }
